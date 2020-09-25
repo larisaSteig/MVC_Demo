@@ -221,3 +221,4 @@ C:\Users\Manpower\Desktop\ASP_NET class\DAY 6_MVC\MVCDemo\MVCDemo\obj\Debug\netc
 C:\Users\Manpower\Desktop\ASP_NET class\DAY 6_MVC\MVCDemo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.pdb
 C:\Users\Manpower\Desktop\ASP_NET class\DAY 6_MVC\MVCDemo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.genruntimeconfig.cache
 C:\Users\Manpower\Desktop\ASP_NET class\DAY 6_MVC\MVCDemo\MVCDemo\obj\Debug\netcoreapp3.1\Razor\Views\Student\Add.cshtml.g.cs
+C:\Users\Manpower\Desktop\ASP_NET class\DAY 6_MVC\MVCDemo\MVCDemo\obj\Debug\netcoreapp3.1\Razor\Views\Student\Details.cshtml.g.cs

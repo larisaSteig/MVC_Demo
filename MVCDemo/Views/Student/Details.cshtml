@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Show Student Details</h1>
+
+<select id="uxStudents" asp-items="ViewBag.Students"></select>
+
+<div id="uxDisplay"></div>
+
+<script>
+    $(document).ready(function () {
+       // alert("WORKING!")
+        $("#uxStudents").change(function () {
+            var studentId = $("#uxStudents").val();
+            //$("#uxDisplay").html(id);
+            //AJAX methods
+            $.ajax({
+                method: 'GET',
+                url: '/Student/Data',
+                data: { id: studentId }
+            }).done(function (result, statusText, xhdr) {
+                $("#uxDisplay").html(result)
+            });// end of ajax
+        });// end change
+    }); // end doc ready
+</script>

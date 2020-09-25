@@ -3,12 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MVCDemo.Models;
 
 namespace MVCDemo.Controllers
 {
     public class StudentController : Controller
     {
+
+        public IActionResult Data(int id)
+        {
+            var students = StudentManager.GetAll();
+            var student = students.SingleOrDefault(m => m.Id == id);
+            var content = "<table class='table col-6'><tr><th>Full Name</th><th>Phone</th></tr>";
+            content += $"<tr><td>{student.FirstName}</td><td>{student.Phone}</td></tr>";
+            return Content(content);
+        }
+        public IActionResult Details()
+        {
+            // get students
+            var students = StudentManager.GetAll();
+            var list = new SelectList(students,"Id","FullName");
+            ViewBag.Students = list;
+            //add list to the view
+            return View();
+        }
         public IActionResult Index()
         {
             var students = StudentManager.GetAll();
