@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVCDemo.Models.Student>
+@{
+    ViewData["Title"] = "Students";
+}
+
+    <h3>
+        @TempData["Title"]
+    </h3>
+
+<table class="table">
+    <thead class= "bg-dark text-white">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.FirstName)</th>
+            <th>@Html.DisplayNameFor(m => m.LastName) </th>
+            <th>@Html.DisplayNameFor(m => m.Phone)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var s in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m=> s.FirstName)</td>
+            <td>@Html.DisplayFor(m => s.LastName)</td>
+            <td>@Html.DisplayFor(m => s.Phone)</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Add New Student", "Add")

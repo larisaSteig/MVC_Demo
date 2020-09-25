@@ -1,0 +1,24 @@
+﻿@model MVCDemo.Models.Student
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add New Student</h1>
+
+@using (Html.BeginForm())
+{
+    <p>@Html.DisplayNameFor(s => s.FirstName): @Html.TextBox("FirstName")</p>
+    <p>@Html.DisplayNameFor(s => s.LastName): @Html.TextBox("LastName")</p>
+    <p>@Html.DisplayNameFor(s => s.Phone): @Html.TextBox("Phone")</p>
+    <input type="submit" value="Add Student" />
+
+    <p>
+        @Html.ActionLink("Return to list", "Index")
+    </p>
+
+    <p>
+        <span class="text-danger">
+            @Html.ValidationSummary()
+        </span>
+    </p>
+}
