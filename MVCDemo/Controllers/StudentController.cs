@@ -15,18 +15,20 @@ namespace MVCDemo.Controllers
         {
             var students = StudentManager.GetAll();
             var student = students.SingleOrDefault(m => m.Id == id);
-            var content = "<table class='table col-6'><tr><th>Full Name</th><th>Phone</th></tr>";
-            content += $"<tr><td>{student.FirstName}</td><td>{student.Phone}</td></tr>";
-            return Content(content);
+            // var content = "<table class='table col-6'><tr><th>Full Name</th><th>Phone</th></tr>";
+            //content += $"<tr><td>{student.FirstName}</td><td>{student.Phone}</td></tr>";
+            // return Content(content);
+            return PartialView("_StudentDetail", student);
+
         }
         public IActionResult Details()
         {
             // get students
             var students = StudentManager.GetAll();
-            var list = new SelectList(students,"Id","FullName");
-            ViewBag.Students = list;
+           // var list = new SelectList(students,"Id","FullName");
+            //ViewBag.Students = list;
             //add list to the view
-            return View();
+            return View(students);
         }
         public IActionResult Index()
         {

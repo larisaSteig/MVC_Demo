@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MVCDemo.Models.Student>
+@{
+    var students = new SelectList(Model, "Id", "FullName");
+    var student = Model.First();
+}
+<dl class="row col-6">
+    <dt class="col-sm-6">Select a Student:</dt>
+    <dd class="col-sm-6">
+        <select id="StudentLookup" asp-items="students"></select>
+    </dd>
+  
+</dl>
+
+

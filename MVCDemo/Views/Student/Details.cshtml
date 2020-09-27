@@ -1,19 +1,27 @@
-﻿
+﻿@model IEnumerable<MVCDemo.Models.Student>
 @{
     ViewData["Title"] = "Details";
+    var students = new SelectList(Model, "Id", "FullName");
+    var student = Model.First();
 }
 
 <h1>Show Student Details</h1>
 
-<select id="uxStudents" asp-items="ViewBag.Students"></select>
+<partial name="_StudentLookup" model="Model" />
 
-<div id="uxDisplay"></div>
+<!--<select id="uxStudents" asp-items="students"></select> -->
+<!--Html.RenderPartial("_StudentDetail", student); old way -->
+
+<div id="uxDisplay">
+    @*@await Html.PartialAsync("_StudentDetail", student)*@
+    <partial name="_StudentDetail" model="@Model.First()" />
+</div>
 
 <script>
     $(document).ready(function () {
-       // alert("WORKING!")
-        $("#uxStudents").change(function () {
-            var studentId = $("#uxStudents").val();
+        // alert("WORKING!")
+        $("#StudentLookup").change(function () {
+            var studentId = $("#StudentLookup").val();
             //$("#uxDisplay").html(id);
             //AJAX methods
             $.ajax({
