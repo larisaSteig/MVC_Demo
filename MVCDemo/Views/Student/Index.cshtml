@@ -26,8 +26,11 @@
         }
     </tbody>
 </table>
+@if (User.IsInRole("Developer"))
+{
+    Html.ActionLink("Add New Student", "Add");
+}
 
-@Html.ActionLink("Add New Student", "Add")
 <br />
 <br />
 @Html.ActionLink("Student Details", "Details")
